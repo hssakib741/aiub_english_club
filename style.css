@@ -4,7 +4,6 @@
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
@@ -143,7 +142,7 @@ nav ul li a:hover::after {
     margin-top: 20px;
     margin-bottom: 10px;
     color: #db6161;
-    font-size: 32px;
+    font-size: 45px;
 }
 
 #about .about-container {
@@ -183,6 +182,13 @@ nav ul li a:hover::after {
 }
 
 /* Event Gallery */
+#event_gallery h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #db6161;
+    font-size: 45px;
+}
 .gallery-container {
     width: fit-content;
     margin: 0 auto;
@@ -233,6 +239,113 @@ nav ul li a:hover::after {
     opacity: 1;
 }
 
+/* Teams Section */
+
+.teams-section .sub-title {
+    text-align: center;
+    font-size: 70px;
+    font-weight: 800;
+    color: #db6262; 
+    margin-bottom: 10px;
+    padding-left: 0%;
+    
+}
+.teams-section {
+    padding: 10px;
+    background-color: #f0f2f5; 
+}
+
+.teams-section .work-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 992px) { 
+    .teams-section .work-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) { 
+    .teams-section .work-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card Styling */
+.teams-section .work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.teams-section .work.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.teams-section .work img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    transition: transform 0.5s;
+}
+
+/* Hover Overlay */
+.teams-section .layer {
+    width: 100%;
+    height: 100%; 
+    background: rgba(204, 82, 82, 0.7); 
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.5s;
+    pointer-events: none; 
+}
+
+.teams-section .layer h5 {
+    font-weight: 600; 
+    color: #fff;
+    margin-bottom: 10px; 
+    font-size: 18px;
+}
+
+.teams-section .layer p {
+    color: #fff;
+    font-size: 15px;
+}
+
+.teams-section .work:hover img {
+    transform: scale(1.05);
+}
+
+.teams-section .work:hover .layer {
+    opacity: 1; 
+}
+
+
+
+
 /* Executive Committee Section */
 * { 
     font-family: Nunito, sans-serif; 
@@ -257,7 +370,7 @@ nav ul li a:hover::after {
     background: #f4fcff; 
     padding: 20px; 
     border-radius: 15px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(167, 138, 138, 0.1); 
 }
 .team-member-image { 
     height: 350px; 
@@ -281,4 +394,280 @@ nav ul li a:hover::after {
 @media (max-width: 480px) {
     .card-container { grid-template-columns: 1fr; }
     .heading-text { font-size: 36px; }
+}
+
+/* JOIN ENGLISH CLUB */
+#join-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff6f6;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  #join-section h2 {
+    text-align: center;
+    color: #db6161;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  #joinForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  #joinForm input,
+  #joinForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.3s ease;
+  }
+  
+  #joinForm input:focus {
+    border-color: #db6161;
+    box-shadow: 0 0 6px rgba(219, 97, 97, 0.3);
+    outline: none;
+  }
+  .category-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: flex-start;
+  }
+  
+  .category-options label {
+    cursor: pointer;
+  }
+  
+  .category-options input[type="checkbox"] {
+    display: none;
+  }
+  
+  .category-options span {
+    background-color: white; /* unselected state */
+    border: 2px solid #db6161;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: 500;
+    color: #db6161;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+  }
+  
+  .category-options input[type="checkbox"]:checked + span {
+    background-color: #db6161; /* selected state */
+    color: white;
+  }
+  
+  #joinForm button {
+    width: 100%;
+    background: #db6161;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #joinForm button:hover {
+    background: #c75050;
+  }
+  
+  /* Thank You Animation */
+  #thankYou {
+    text-align: center;
+    margin-top: 30px;
+    padding: 30px 20px;
+    background: #fff0f0;
+    border-radius: 12px;
+    border: 2px dashed #db6161;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  #thankYou .tick {
+    font-size: 60px;
+    color: #db6161;
+    animation: pop 0.5s ease;
+    margin-bottom: 10px;
+  }
+  
+  #thankYou h3 {
+    color: #db6161;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  #thankYou p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0.2); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    #join-section {
+      margin: 20px 10px;
+      padding: 15px;
+    }
+}
+
+  /* Current Members Show */
+  
+  .stats-section {
+  background-color: #db6161;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  border-top-left-radius: 100% 20px;
+  border-top-right-radius: 100% 20px;
+  border-bottom-left-radius: 100% 20px;
+  border-bottom-right-radius: 100% 20px;
+}
+
+.stat {
+  text-align: center;
+  margin: 20px;
+}
+
+.number {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+
+  /* Footer */    
+#site-footer {
+    background-color: #fff6f6;
+    color: #db6161;
+    text-align: center;
+    padding: 25px 15px;
+    font-family: 'Segoe UI', sans-serif;
+    border-top: 2px solid #db6161;
+    margin-top: 40px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.custom-footer {
+  background: #f9f9f9;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.footer-left,
+.footer-right,
+.footer-map {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  width: 150px;
+  height: 70px;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 16px;
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+  border-left: 4px solid #db6161;
+  padding-left: 15px;
+  margin: 10px 0 20px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #db6161;
+}
+
+.footer-right h4,
+.footer-map h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.footer-right p,
+.footer-map p {
+  font-size: 14px;
+  color: #444;
+  margin: 5px 0;
+}
+
+.footer-right i {
+  margin-right: 6px;
+  color: #db6161;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 10px;
+  
 }
